@@ -1,12 +1,14 @@
-Note: During compiling, if you get the error
-"libmash-0.2.la: file not recognized: File format not recognized"
-search for --library in mash/Makefile and change it to 
-mash-0.2
+Prerequisites for Debian Buster:
+apt install gnome-common gtk-doc-tools libclutter-1.0-dev libgirepository1.0-dev
 
-To make a debian package: 
+./autogen.sh --prefix=/usr --libdir=/usr/lib/arm-linux-gnueabihf --enable-introspection=yes --with-winsys=wayland
+or on 64 bit systems:
+./autogen.sh --prefix=/usr --libdir=/usr/lib/aarch64-linux-gnu --enable-introspection=yes --with-winsys=wayland
+
+
+o make a debian package:
 dpkg-buildpackage -b -nc
 
-./configure --prefix=/usr --libdir=/usr/lib/arm-linux-gnueabihf 
 
 Mash - README
 ===============================================================================
